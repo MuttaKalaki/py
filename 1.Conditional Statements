@@ -1,9 +1,7 @@
-
-num=float(input("Enter a number: "))
-if num > 0:
-print("The number ispositive.")
-elif num < 0:
-print("The number is negative.")
+num=int(input("Enter a number: "))
+if num>0:
+    print(num,"is positive")
+elif num<0:
+    print(num,"is negative")
 else:
-print("The number is zero.")
-
+    print(num,"is zero")
