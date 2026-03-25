@@ -1,1 +1,32 @@
+import pandas as pd
+import matplotlib.pyplot as plt
 
+# Read CSV file
+data = pd.read_csv(r'C:\Users\kathi\PycharmProjects\LabProgram\expense.csv')
+
+# Remove extra spaces in column names
+data.columns = data.columns.str.strip()
+
+# Display first few rows
+print(data.head())
+
+# Line Chart
+plt.figure(figsize=(10,5))
+plt.plot(data['Month'], data['Expense'], marker='o', color='blue', label='Monthly Expense')
+plt.xlabel('Month')
+plt.ylabel('Expense')
+plt.title('Monthly Expenses - Line Chart')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Bar Chart
+plt.figure(figsize=(10,5))
+plt.bar(data['Month'], data['Expense'], color='orange', label='Monthly Expense')
+plt.xlabel('Month')
+plt.ylabel('Expense')
+plt.title('Monthly Expenses - Bar Chart')
+plt.xticks(rotation=45)
+plt.legend()
+plt.show()
